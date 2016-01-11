@@ -1,0 +1,20 @@
+{{#each messages}}
+<div class="alert alert-dismissible alert-success">
+    <button type="button" class="close" data-dismiss="alert">×</button>
+    {{this}}
+</div>
+{{/each}}
+
+<div class="page-header">
+    <h1>Feladatok listája</h1>
+</div>
+
+{{log model}}
+{{task-list tasks=model}}
+
+<p>
+    {{!--{{link-to "Új hiba felvitele" "errors.new" class="btn btn-default" id="newErrorButton"}}--}}
+    <button {{action "showModal" "new-task-modal" "tasks.list"}} class="btn btn-default">Új feladat felvitele</button>
+</p>
+{{!--<a href="/errors/new" class="btn btn-default" id="newErrorButton">Új hiba felvitele</a>--}}
+

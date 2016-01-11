@@ -1,0 +1,38 @@
+<table class="table table-bordered table-hover " id="taskTable">
+    <thead>
+        <tr>
+            <th>Helyszín</th>
+            <th>Leírás</th>
+            <th>Funkció</th>
+        </tr>   
+    </thead>
+    <tbody>
+        {{#each tasks}}
+        <tr>
+            <td>{{location}}</td>
+            <td><span class="badge">{{numberOfMessages}}</span> {{description}}</td>
+            <td>
+                {{link-to "Megtekint" "tasks.view" this class="btn btn-success btn-sm"}}
+                {{link-to "Szerkeszt" "tasks.edit" this class="btn btn-warning btn-sm"}}
+                <button {{action "deleteTask" this}} class="btn btn-danger btn-sm">Törlés</button>
+            </td>
+        </tr>
+        {{/each}}
+        {{!--
+        <tr>
+            <td>3412534</td>
+            <td><span class="label label-danger">Új</span></td>
+            <td>pc9</td>
+            <td><span class="badge">0</span> rossz minden</td>
+            <td><a class="btn btn-danger btn-sm torles-gomb" href="/errors/delete/1" role="button">Törlés</a></td>
+        </tr>
+        <tr>
+            <td>3412534</td>
+            <td><span class="label label-danger">Új</span></td>
+            <td>pc9</td>
+            <td><span class="badge">0</span> rossz minden</td>
+            <td><a class="btn btn-danger btn-sm torles-gomb" href="/errors/delete/1" role="button">Törlés</a></td>
+        </tr>
+        --}}
+    </tbody>
+</table>
